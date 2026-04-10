@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', 'Inter', system-ui, sans-serif;
+  background: #0a1a12;
+  color: #e8f5e9;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(74, 222, 128, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 222, 128, 0.5);
+}
+
+/* ── Glass card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Button styles large for Meta Quest 2 controller ── */
+.btn-vr-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  min-height: 56px;
+  box-shadow: 0 4px 24px rgba(5, 150, 105, 0.3);
+}
+.btn-vr-primary:hover {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+  transform: translateY(-1px);
+}
+.btn-vr-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-vr-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.2s ease;
+  min-height: 56px;
+}
+.btn-vr-secondary:hover {
+  background: rgba(255,255,255,0.14);
+}
+.btn-vr-secondary:active {
+  transform: scale(0.97);
+}
+
+/* ── Place card in sidebar ── */
+.place-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  min-height: 72px;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+}
+
+.place-card:hover {
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.08);
+}
+
+.place-card.active {
+  background: linear-gradient(135deg, rgba(6,78,59,0.5), rgba(13,74,100,0.35));
+  border-color: rgba(52, 211, 153, 0.3);
+  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.2);
+}
+
+/* ── Toggle switch container ── */
+.mode-toggle {
+  display: flex;
+  padding: 0.25rem;
+  border-radius: 1rem;
+  gap: 0.25rem;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.mode-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  border: none;
+  min-height: 48px;
+  background: transparent;
+}
+
+.mode-toggle-btn.active {
+  color: white;
+  background: linear-gradient(135deg, #059669, #0d9488);
+  box-shadow: 0 2px 12px rgba(5,150,105,0.3);
+}
+
+.mode-toggle-btn.inactive {
+  color: rgba(255,255,255,0.45);
+}
+.mode-toggle-btn.inactive:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ── A-Frame iframe container ── */
+.aframe-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ── Lesson question card ── */
+.question-card {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* ── Note item ── */
+.note-item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #4ade80, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glow effect ── */
+.glow-green {
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.15), 0 0 40px rgba(74, 222, 128, 0.05);
+}
+
+/* ── Animate ── */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Copy toast ── */
+.copy-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #d1fae5;
+  z-index: 50;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, #065f46, #0f766e);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  animation: toastIn 0.3s ease-out;
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ── Responsive for VR browser ── */
+@media (max-width: 900px) {
+  .sidebar-area {
+    display: none !important;
+  }
+  .mobile-topbar {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-topbar {
+    display: none !important;
+  }
+}
+
+/* ── Background mesh ── */
+.bg-mesh {
+  background-color: #0a1a12;
+  background-image:
+    radial-gradient(at 20% 20%, rgba(22, 101, 52, 0.3) 0px, transparent 50%),
+    radial-gradient(at 80% 10%, rgba(13, 148, 136, 0.2) 0px, transparent 40%),
+    radial-gradient(at 10% 80%, rgba(5, 46, 22, 0.5) 0px, transparent 40%),
+    radial-gradient(at 90% 90%, rgba(15, 118, 110, 0.15) 0px, transparent 40%);
+}
+
+/* ── Pulse animation ── */
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+.animate-pulse-soft {
+  animation: pulseSoft 2.5s infinite ease-in-out;
+}
