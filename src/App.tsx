@@ -21,42 +21,6 @@ function CopyToast() {
   );
 }
 
-// ── Welcome Hero (hiển thị trước khi chọn địa danh – chỉ ở large screen) ────
-function WelcomeHero() {
-  return (
-    <div className="flex flex-col items-center justify-center h-full gap-6 px-8 text-center animate-fade-in">
-      <div className="w-20 h-20 rounded-3xl flex items-center justify-center mb-2"
-           style={{ background: 'linear-gradient(135deg, #065f46, #0f766e)' }}>
-        <Glasses size={40} className="text-white" />
-      </div>
-      <div>
-        <h2 className="text-2xl font-bold text-white leading-tight mb-3 gradient-text">
-          Không gian trải nghiệm VR
-        </h2>
-        <h3 className="text-lg font-semibold text-white/80 mb-3">
-          Các địa danh huyện Con Cuông, Nghệ An
-        </h3>
-        <p className="text-white/50 text-sm leading-relaxed max-w-md">
-          Website hỗ trợ học sinh tham quan ảo các địa danh địa phương bằng Meta Quest 2,
-          phục vụ dạy học môn Giáo dục địa phương.
-        </p>
-      </div>
-      <div className="flex flex-wrap gap-2 justify-center mt-2">
-        {places.map((p) => (
-          <span key={p.id}
-                className="px-3 py-1.5 rounded-xl text-sm text-white/60 border border-white/10"
-                style={{ background: 'rgba(255,255,255,0.04)' }}>
-            {p.icon} {p.title}
-          </span>
-        ))}
-      </div>
-      <p className="text-white/30 text-xs mt-2 animate-pulse-soft">
-        ← Chọn một địa danh để bắt đầu
-      </p>
-    </div>
-  );
-}
-
 // ── Main App Component ────────────────────────────────────────────────────────
 
 /**
